@@ -9,6 +9,7 @@ import Timeline from '@/components/Timeline';
 import FAQ from '@/components/FAQ';
 import SEO from '@/components/SEO';
 import ExplainerVideo from '@/components/ExplainerVideo';
+import SocialUpdates from '@/components/SocialUpdates';
 import { useEffect } from 'react';
 
 const Index = () => {
@@ -66,6 +67,7 @@ const Index = () => {
         keywords={['speaking competition', 'Singapore youth', 'oratory', 'public speaking', 'national competition', 'Mind Stretcher', 'Master Speakers', 'NYOC 2026']}
       />
       <Hero />
+      <SocialUpdates />
       <div id="why-take-part">
         <WhyTakePart />
       </div>
