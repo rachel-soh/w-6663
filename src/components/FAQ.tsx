@@ -11,46 +11,12 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "What is the deadline for video submissions?",
-      answer: "All video submissions must be received by 11:59 PM on 31 August 2025."
-    },
-    {
       question: "How do I know which category to join?",
       answer: "You should choose your category based on your current school level, not your age. For example, if you are in Secondary 2, even if you're 15 years old, you should join the Lower Secondary category."
     },
     {
-      question: "Will coaching or guidance be provided for participants?",
-      answer: (
-        <div className="space-y-3">
-          <p>
-            We want every student in Singapore to have the opportunity to participate, grow, and shine on this national stage – whether or not they have formal coaching.
-          </p>
-          <p className="font-medium">To support all participants, we've made a range of free resources available:</p>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              <a href="#tips" className="text-red-600 hover:text-red-800 underline">Official speech scripts & tips</a> you can download and use
-            </li>
-            <li>
-              A <a href="#tips" className="text-red-600 hover:text-red-800 underline">short video</a> where Coach Raymond shares 3 practical tips on crafting a great speech – perfect for anyone unsure how to begin
-            </li>
-            <li>
-              Regular tips and guidance on our social media channels until the 31 August submission deadline:
-              <ul className="list-disc pl-5 mt-1">
-                <li>Instagram <a href="https://www.instagram.com/masterspeakersacademy" className="text-red-600 hover:text-red-800 underline" target="_blank" rel="noopener noreferrer">@masterspeakersacademy</a></li>
-                <li>Facebook <a href="https://www.facebook.com/masterspeakersacademy" className="text-red-600 hover:text-red-800 underline" target="_blank" rel="noopener noreferrer">Master Speakers Academy</a></li>
-                <li>TikTok <a href="https://www.tiktok.com/@masterspeakersacademy" className="text-red-600 hover:text-red-800 underline" target="_blank" rel="noopener noreferrer">@masterspeakersacademy</a></li>
-              </ul>
-            </li>
-          </ul>
-          <p>
-            Students in Master Speakers classes may also get additional exposure to speech preparation. However, all key guidance will be shared publicly – ensuring every student has equal access to support.
-          </p>
-        </div>
-      )
-    },
-    {
       question: "Can I submit more than one video?",
-      answer: "Yes, you can submit more than one video for the online preliminary round. However, we will only use the final clip submitted, which we assume is your best and latest clip."
+      answer: "No. Each student may submit one entry only."
     },
     {
       question: "Can I use slides, props, pictures, or music in my video?",
@@ -60,13 +26,9 @@ const FAQ = () => {
       question: "Can homeschoolers or international school students join?",
       answer: "Yes, all students based in Singapore are welcome, including those from homeschools and international schools."
     },
-    {
-      question: "What format should the video be in?",
-      answer: "Please submit in landscape orientation (MP4 format). Follow the duration for your division and ensure your face is clearly visible with no background music or edits."
-    },
-    {
+{
       question: "What should I wear in my video?",
-      answer: "For the video submission, you can dress in any attire. Students should dress in their school uniform for the live semi-finals & finals"
+      answer: "Students should dress in their school uniform. University and Polytechnic students can dress in smart casual attire."
     }
   ];
 
@@ -77,7 +39,7 @@ const FAQ = () => {
     },
     {
       category: "Finalists will receive:",
-      items: ["Trophy or Finalist Certificate", "Professional coaching session", "Feature in our 'Voices of Youth SG60' video"]
+      items: ["Trophy or Finalist Certificate", "Professional coaching session", "Feature in our highlight video"]
     }
   ];
 

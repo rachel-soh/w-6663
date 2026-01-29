@@ -6,7 +6,7 @@ const WhyTakePart = () => {
     {
       icon: MessageSquare,
       title: "Sharpen speaking skills",
-      description: "Celebrate SG60 with your story and sharpen speaking skills"
+      description: "Build confidence, craft compelling narratives, and sharpen your speaking skills"
     },
     {
       icon: Users,
@@ -21,7 +21,7 @@ const WhyTakePart = () => {
     {
       icon: Video,
       title: "Be featured",
-      description: "Appear in our SG60 highlight reel: 'Voices of SG60'"
+      description: "Appear in our official highlight reel and media features"
     }
   ];
 
@@ -86,7 +86,7 @@ const WhyTakePart = () => {
               </li>
               <li className="flex items-center">
                 <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                Some may be featured in our "Voices of SG60" highlight reel
+                Some may be featured in our official highlight reel
               </li>
             </ul>
           </div>

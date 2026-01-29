@@ -1,7 +1,6 @@
 
 import PageLayout from '@/components/PageLayout';
 import Hero from '@/components/Hero';
-import SocialUpdates from '@/components/SocialUpdates';
 import WhyTakePart from '@/components/WhyTakePart';
 import HowToJoin from '@/components/HowToJoin';
 import Divisions from '@/components/Divisions';
@@ -60,35 +59,36 @@ const Index = () => {
   
   return (
     <PageLayout>
-      <SEO 
-        title="National Youth Orator Championships 2025 - SG60 Edition" 
-        description="A national platform empowering Singapore's youth to become confident communicators. Join the SG60 Edition: My Singapore. Finals: 13 September 2025."
+      <SEO
+        title="National Youth Orator Championships 2026"
+        description="A national platform empowering Singapore's youth to become confident communicators. Coming 2026."
         imageUrl="/lovable-uploads/526dc38a-25fa-40d4-b520-425b23ae0464.png"
-        keywords={['speaking competition', 'Singapore youth', 'SG60', 'oratory', 'public speaking', 'national competition', 'Mind Stretcher', 'Master Speakers']}
+        keywords={['speaking competition', 'Singapore youth', 'oratory', 'public speaking', 'national competition', 'Mind Stretcher', 'Master Speakers', 'NYOC 2026']}
       />
       <Hero />
-      <SocialUpdates />
       <div id="why-take-part">
         <WhyTakePart />
       </div>
-      {/* <div id="how-to-join">
+      <div id="how-to-join">
         <HowToJoin />
-      </div> */}
+      </div>
       <div id="divisions">
         <Divisions />
       </div>
+      {/* Hidden until replaced with NYOC highlight video
       <div id="tips">
         <ExplainerVideo />
       </div>
+      */}
       <div id="our-judges">
         <OurJudges />
       </div>
       <div id="timeline">
         <Timeline />
       </div>
-      {/* <div id="faq">
+      <div id="faq">
         <FAQ />
-      </div> */}
+      </div>
     </PageLayout>
   );
 };

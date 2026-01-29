@@ -17,19 +17,31 @@ const HowToJoin = () => {
     {
       icon: Upload,
       title: "Submit via our online form",
-      description: <>Submit your video by <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6TwIjOpMt5LksMbTtelSnfi0UBPN6Gp8lLnvT4mVz6awIdA/viewform" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">31 August 2025</a></>
+      description: "Submit your video by the deadline (TBA)"
     }
   ];
 
   const recordingTips = [
+    <>Adhere to the <a href="#divisions" onClick={(e) => {
+      e.preventDefault();
+      const divisionsSection = document.getElementById('divisions');
+      if (divisionsSection) {
+        const yOffset = -80;
+        const y = divisionsSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    }} className="text-red-600 hover:underline">video duration</a> for your category</>,
     "Submit your video in MP4 format",
-    "No editing of the video is allowed (record as one continuous speech)"
+    "Face must be clearly visible (upper torso / head-to-knees acceptable)",
+    "No editing of the video is allowed (record as one continuous speech)",
+    "No slides, props, pictures, background music, or special effects",
+    "Use of notes or cue cards is strictly not allowed – good speakers can engage without written aids"
   ];
 
   return (
     <section id="how-to-join" className="bg-gray-50 py-16 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,11 +54,11 @@ const HowToJoin = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-8">
             <Calendar className="w-6 h-6 text-red-600" />
             <span className="text-lg sm:text-xl font-semibold text-red-700 text-center">
-              Deadline for submission: 31 August 2025
+              Submission deadline to be announced
             </span>
           </div>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {steps.map((step, index) => (
             <motion.div
@@ -85,7 +97,7 @@ const HowToJoin = () => {
           ))}
         </div>
 
-        <motion.div 
+        <motion.div
           className="bg-green-50 border border-green-200 rounded-xl p-6 sm:p-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +122,7 @@ const HowToJoin = () => {
               <ol className="list-decimal pl-6 space-y-2 text-gray-700">
                 <li>Upload your video to Google Drive, OneDrive or Dropbox</li>
                 <li>Make sure your sharing settings allow "Anyone with the link to view"</li>
-                <li>Share the link in our <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6TwIjOpMt5LksMbTtelSnfi0UBPN6Gp8lLnvT4mVz6awIdA/viewform" target="_blank" rel="noopener noreferrer" className="text-red-600 hover:underline">online form</a></li>
+                <li>Share the link in our online form (link to be announced)</li>
               </ol>
             </div>
           </div>

@@ -1,6 +1,5 @@
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { BookOpen, Eye, Clock, Lightbulb, Download } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
@@ -14,13 +13,8 @@ const Divisions = () => {
       timeLimit: "1.5-2 minutes",
       criteria: [
         "Language & delivery",
-        "Content & relevance", 
+        "Content & relevance",
         "Personal voice & impact"
-      ],
-      themes: [
-        { topic: "My Favourite Childhood Singapore Memory: What's the funniest, happiest or most unforgettable thing you remember doing in Singapore as a kid?" },
-        { topic: "The Most Magical Singapore Dish Ever! Which Singapore food feels like pure magic to you, and why do you love it so much?" },
-        { topic: "My Dream for Singapore in 10 Years: What cool new things do you hope Singapore will have when you're older?" }
       ]
     },
     {
@@ -30,70 +24,42 @@ const Divisions = () => {
       timeLimit: "2-2.5 minutes",
       criteria: [
         "Language & delivery",
-        "Content & relevance", 
+        "Content & relevance",
         "Personal voice & impact"
-      ],
-      themes: [
-        { topic: "The First Thing You'd Share About Singapore: What's the most amazing thing about Singapore you'd tell a new friend from overseas?" },
-        { topic: "If I Were Prime Minister for a Day: If you got to be Singapore's Prime Minister for just one day, what's the coolest thing you'd do?" },
-        { topic: "My Singapore Superhero: Create a superhero based on a Singaporean trait (like 'kiasuism', resilience, multiculturalism etc.). What would his/her superpowers be?" }
       ]
     },
     {
       id: "lower-secondary",
       title: "Lower Secondary (Sec 1–2)",
       icon: Clock,
-      timeLimit: "2.5-3 minutes",
+      timeLimit: "2.5-3.5 minutes",
       criteria: [
         "Language & delivery",
-        "Content & relevance", 
+        "Content & relevance",
         "Personal voice & impact"
-      ],
-      themes: [
-        { topic: "The Most Unexpected Thing I'd Miss About Singapore When Overseas: What's one surprising thing about Singapore you never thought you'd miss, but end up missing when you travel?" },
-        { topic: "The Everyday National Monument: If you could turn any everyday spot (like a bubble tea shop, bus interchange, community parks etc.) into a National Monument, which would you pick and why?" },
-        { topic: "Singapore's Best Trait: Strength or Weakness? Pick one common Singaporean trait (like 'kiasuism', efficiency, pressure to succeed etc.) and argue if it helps us or holds us back." }
       ]
     },
     {
       id: "upper-secondary",
       title: "Upper Secondary & Youth Open (Sec 3-5, JC, IB, Uni, Poly, ITE)",
       icon: Lightbulb,
-      timeLimit: "2.5-3 minutes",
+      timeLimit: "2.5-3.5 minutes",
       criteria: [
         "Language & delivery",
-        "Content & relevance", 
+        "Content & relevance",
         "Personal voice & impact"
-      ],
-      themes: [
-        { 
-          topic: "How would you make Singapore better?",
-          clarification: [
-            "We speak not just to express ourselves, but to influence others for good. You can tackle this topic in any way you want. This is your stage, and we're excited to hear your point of view.",
-            "One useful device is to imagine you are talking to a representative group of Singaporeans. How would you help them understand why you want to improve something? How are they likely to react, and do you think they would be persuaded?"
-          ]
-        }
       ]
     }
   ];
 
-  const getPeriodColor = (period: string) => {
-    switch (period) {
-      case "Past": return "bg-amber-100 text-amber-800 border-amber-200";
-      case "Present": return "bg-blue-100 text-blue-800 border-blue-200";
-      case "Future": return "bg-green-100 text-green-800 border-green-200";
-      default: return "bg-gray-100 text-gray-800 border-gray-200";
-    }
-  };
-
   const handleDownloadRubrics = () => {
-    window.open('https://drive.google.com/file/d/1rLXDlt9RH0dlMhsWXu9KD53To6tSYVBC/view?usp=drive_link', '_blank');
+    window.open('https://drive.google.com/file/d/1JizjCjMX4HweAF5OugCkWemwbEB0MMZw/view?usp=sharing', '_blank');
   };
 
   return (
     <section id="divisions" className="bg-white py-16 w-full">
       <div className="w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -101,20 +67,22 @@ const Divisions = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Finals Topics
+            Categories & Themes
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto mb-6">
-            Explore the thought-provoking themes that our Finalists will tackle on stage.
+            Open to students from Primary to University levels. Speech topics for NYOC 2026 will be announced soon.
           </p>
-          <Button 
+          {/* Hidden until 2026 rubrics are ready
+          <Button
             onClick={handleDownloadRubrics}
             className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold"
           >
             <Download className="w-5 h-5 mr-2" />
             Download Judging Rubrics
           </Button>
+          */}
         </motion.div>
-        
+
         <motion.div
           className="max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
@@ -124,8 +92,8 @@ const Divisions = () => {
         >
           <Accordion type="single" collapsible className="w-full space-y-4">
             {divisions.map((division, index) => (
-              <AccordionItem 
-                key={division.id} 
+              <AccordionItem
+                key={division.id}
                 value={division.id}
                 className="bg-gray-50 rounded-xl border border-gray-200 px-6"
               >
@@ -142,27 +110,13 @@ const Divisions = () => {
                 </AccordionTrigger>
                 <AccordionContent className="pb-6">
                   <div className="ml-16 space-y-6">
-                    {/* Speech Themes */}
+                    {/* Speech Themes - Coming Soon */}
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Speech Theme</h4>
-                      <p className="text-gray-700 mb-4">{division.themes.length > 1 ? 'Please choose 1 out of the 3 themes below for your speech:' : 'Your speech theme:'}</p>
-                      <div className="space-y-4">
-                        {division.themes.map((theme, themeIndex) => (
-                          <div key={themeIndex} className="bg-white rounded-lg p-4 border border-gray-100 shadow-sm">
-                            <p className="text-gray-700 font-medium leading-relaxed">
-                              {theme.topic}
-                            </p>
-                            {theme.clarification && (
-                              <div className="mt-4 space-y-3">
-                                {theme.clarification.map((para, paraIndex) => (
-                                  <p key={paraIndex} className="text-gray-600 text-sm leading-relaxed">
-                                    {para}
-                                  </p>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                        ))}
+                      <h4 className="text-lg font-semibold text-gray-900 mb-3">Speech Themes</h4>
+                      <div className="bg-amber-50 rounded-lg p-4 border border-amber-200">
+                        <p className="text-amber-800 font-medium text-center">
+                          Topics announced soon — stay tuned!
+                        </p>
                       </div>
                     </div>
 

@@ -1,5 +1,5 @@
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navbarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,23 +19,6 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  
-  // Set navbar height CSS variable
-  useEffect(() => {
-    const updateNavbarHeight = () => {
-      if (navbarRef.current) {
-        const height = navbarRef.current.offsetHeight;
-        document.documentElement.style.setProperty('--navbar-height', `${height}px`);
-      }
-    };
-    
-    // Set initial height
-    updateNavbarHeight();
-    
-    // Update on resize or when menu opens/closes
-    window.addEventListener('resize', updateNavbarHeight);
-    return () => window.removeEventListener('resize', updateNavbarHeight);
-  }, [isMenuOpen]); // Re-run when menu opens/closes
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -45,32 +27,27 @@ const Navbar = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      // Calculate offset for sticky banner (~44px) + navbar (~64px) + some padding
-      const offset = 120;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      
-      window.scrollTo({
-        top: offsetPosition,
+      element.scrollIntoView({
         behavior: 'smooth'
       });
-      
       // Update URL with hash for direct linking
       window.history.pushState(null, '', `/#${id}`);
     }
     setIsMenuOpen(false);
   };
 
+  const openWaitlist = () => {
+    // TODO: Replace with actual waitlist URL once provided by Rachel
+    window.open('https://forms.gle/svzJGfVftE2ozmT27', '_blank');
+    setIsMenuOpen(false);
+  };
+
   return (
     <motion.nav 
-      ref={navbarRef}
       className={cn(
-        "fixed left-0 right-0 z-50 transition-all duration-300 w-full", 
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full", 
         isScrolled ? "bg-white shadow-sm" : "bg-red-600"
       )} 
-      style={{
-        top: 'var(--banner-height, 0px)' // No banner by default
-      }}
       initial={{ opacity: 1, y: 0 }} 
       animate={{ opacity: 1, y: 0 }}
     >
@@ -88,26 +65,16 @@ const Navbar = () => {
                   "text-2xl font-bold transition-colors",
                   isScrolled ? "text-red-600" : "text-white"
                 )}>
-                  NYOC 2025
+                  NYOC 2026
                 </h1>
               </button>
             </div>
           </div>
           
           {/* Desktop Navigation */}
+          {/* <div className="hidden lg:block"> */}
           <div className="hidden xl:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <button 
-                onClick={() => scrollToSection('stay-updated')} 
-                className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
-                    : "text-white hover:text-red-100 hover:bg-red-700"
-                )}
-              >
-                Stay Updated
-              </button>
               <button 
                 onClick={() => scrollToSection('why-take-part')} 
                 className={cn(
@@ -120,6 +87,17 @@ const Navbar = () => {
                 Why Take Part
               </button>
               <button 
+                onClick={() => scrollToSection('how-to-join')} 
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
+                    : "text-white hover:text-red-100 hover:bg-red-700"
+                )}
+              >
+                How To Join
+              </button>
+              <button 
                 onClick={() => scrollToSection('divisions')} 
                 className={cn(
                   "px-3 py-2 rounded-md text-sm font-medium transition-colors",
@@ -128,18 +106,7 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Finals Topics
-              </button>
-              <button 
-                onClick={() => scrollToSection('tips')} 
-                className={cn(
-                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
-                  isScrolled 
-                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
-                    : "text-white hover:text-red-100 hover:bg-red-700"
-                )}
-              >
-                Tips & Resources
+                Categories & Themes
               </button>
               <button 
                 onClick={() => scrollToSection('our-judges')} 
@@ -161,12 +128,35 @@ const Navbar = () => {
                     : "text-white hover:text-red-100 hover:bg-red-700"
                 )}
               >
-                Competition Key Details
+                Timeline
+              </button>
+              <button
+                onClick={() => scrollToSection('faq')} 
+                className={cn(
+                  "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "text-gray-700 hover:text-red-600 hover:bg-gray-50" 
+                    : "text-white hover:text-red-100 hover:bg-red-700"
+                )}
+              >
+                FAQ
+              </button>
+              <button 
+                onClick={openWaitlist}
+                className={cn(
+                  "px-4 py-2 rounded-md text-sm font-medium transition-colors",
+                  isScrolled 
+                    ? "bg-red-600 text-white hover:bg-red-700" 
+                    : "bg-white text-red-600 hover:bg-red-50"
+                )}
+              >
+                Join Waitlist
               </button>
             </div>
           </div>
           
           {/* Mobile menu button */}
+          {/* <div className="lg:hidden"> */}
           <div className="xl:hidden">
             <button 
               onClick={toggleMenu} 
@@ -182,29 +172,15 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Navigation Menu */}
-      {isMenuOpen && (
-        <motion.div 
-          className="xl:hidden w-full overflow-hidden"
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: "auto", opacity: 1 }}
-          exit={{ height: 0, opacity: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <div className={cn(
-            "px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-sm",
-            isScrolled ? "bg-white" : "bg-red-600"
-          )}>
-          <button 
-            onClick={() => scrollToSection('stay-updated')} 
-            className={cn(
-              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
-              isScrolled 
-                ? "text-gray-700 hover:bg-gray-50" 
-                : "text-white hover:bg-red-700"
-            )}
-          >
-            Stay Updated
-          </button>
+      <div className={cn(
+        // "lg:hidden transition-all duration-300 overflow-hidden w-full",
+        "xl:hidden transition-all duration-300 overflow-hidden w-full",
+        isMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+      )}>
+        <div className={cn(
+          "px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-sm",
+          isScrolled ? "bg-white" : "bg-red-600"
+        )}>
           <button 
             onClick={() => scrollToSection('why-take-part')} 
             className={cn(
@@ -217,6 +193,17 @@ const Navbar = () => {
             Why Take Part
           </button>
           <button 
+            onClick={() => scrollToSection('how-to-join')} 
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
+              isScrolled 
+                ? "text-gray-700 hover:bg-gray-50" 
+                : "text-white hover:bg-red-700"
+            )}
+          >
+            How To Join
+          </button>
+          <button 
             onClick={() => scrollToSection('divisions')} 
             className={cn(
               "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
@@ -225,18 +212,7 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Finals Topics
-          </button>
-          <button 
-            onClick={() => scrollToSection('tips')} 
-            className={cn(
-              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
-              isScrolled 
-                ? "text-gray-700 hover:bg-gray-50" 
-                : "text-white hover:bg-red-700"
-            )}
-          >
-            Tips & Resources
+            Categories & Themes
           </button>
           <button 
             onClick={() => scrollToSection('our-judges')} 
@@ -258,11 +234,32 @@ const Navbar = () => {
                 : "text-white hover:bg-red-700"
             )}
           >
-            Competition Key Details
+            Timeline
+          </button>
+          <button
+            onClick={() => scrollToSection('faq')} 
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
+              isScrolled 
+                ? "text-gray-700 hover:bg-gray-50" 
+                : "text-white hover:bg-red-700"
+            )}
+          >
+            FAQ
+          </button>
+          <button 
+            onClick={openWaitlist}
+            className={cn(
+              "block w-full text-left px-3 py-2 rounded-md text-base font-medium",
+              isScrolled 
+                ? "bg-red-600 text-white hover:bg-red-700" 
+                : "bg-white text-red-600 hover:bg-red-50"
+            )}
+          >
+            Join Waitlist
           </button>
         </div>
-        </motion.div>
-      )}
+      </div>
     </motion.nav>
   );
 };

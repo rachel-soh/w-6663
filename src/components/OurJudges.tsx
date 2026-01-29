@@ -6,24 +6,10 @@ const OurJudges = () => {
   const judges = [
     {
       name: "Mary Ann Tear",
-      title: "Senior Examiner & Consultant",
+      title: "Master Trainer",
       organization: "Trinity College London",
-      description: "A leading figure in speech and drama education, Mary Ann has over 30 years of experience across Singapore, Southeast Asia, and the UK. As a Senior Examiner with Trinity College London, she has trained teachers and adjudicated performances worldwide. She also served as voice coach to Singapore’s World Schools Debating Champions in 2015. At NYOC 2025, she brings global expertise and a deep belief in empowering youth through voice and performance.",
+      description: "An esteemed drama and communication educator, Mary Ann has championed public speaking and speech & drama education for over 30 years across Singapore, Southeast Asia, and the UK. As a Master Trainer with Trinity College London, she has trained teachers, developed curriculum, and adjudicated countless performances and assessments. At NYOC 2025, she brings global perspective, expert adjudication, and a deep commitment to nurturing expressive, confident communicators.",
       image: "/images/judges/mary-ann.jpg"
-    },
-    {
-      name: "Du Xuan",
-      title: "Lawyer",
-      organization: "Harvard & Oxford Alumna",
-      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
-      image: "/images/judges/du-xuan.jpg"
-    },
-    {
-      name: "Moses Soh",
-      title: "Deputy CEO",
-      organization: "Mind Stretcher",
-      description: "A 2012 Singapore President’s Scholar, MAS Overseas Scholar, and Wharton graduate (Summa Cum Laude), Moses also holds a Master’s in Finance from Princeton and a diploma in AI from Stanford. An ex-RI debater and gold medal winner at the SAGE World Championships, he now leads educational innovation at Mind Stretcher. At NYOC 2025, he brings intellectual rigour and a passion for shaping future-ready youth leaders.",
-      image: "/images/judges/moses.jpg"
     },
     {
       name: "Muhd Nurhakim",
@@ -33,32 +19,25 @@ const OurJudges = () => {
       image: "/images/judges/hakim.jpg"
     },
     {
-      name: "Kristie Lim",
-      title: "Founding Principal",
+      name: "Moses Soh",
+      title: "Deputy CEO",
       organization: "Mind Stretcher",
-      description: "A trained lawyer and accountant turned educator, Kristie founded the Mind Stretcher Education Group and built it into one of Singapore's leading enrichment networks with over 30 centres. With over two decades in education, she champions accessible, high-quality learning and holistic growth for every child.",
-      image: "/images/judges/kristie-lim.jpg"
+      description: "A 2012 Singapore President’s Scholar, MAS Overseas Scholar, and Wharton graduate (Summa Cum Laude), Moses also holds a Master’s in Finance from Princeton and a diploma in AI from Stanford. An ex-RI debater and gold medal winner at the SAGE World Championships, he now leads educational innovation at Mind Stretcher. At NYOC 2025, he brings intellectual rigour and a passion for shaping future-ready youth leaders.",
+      image: "/images/judges/moses.jpg"
     },
     {
-      name: "John Lee",
-      title: "Chief of Staff",
-      organization: "Mind Stretcher",
-      description: "John leads human capital development and strategic initiatives at Mind Stretcher. A former national-level debater and seasoned moderator, he brings deep experience in leadership, learning design, and student engagement. Having spent years in multinational management roles, he combines global insight with a passion for nurturing purpose-driven youth.",
-      image: "/images/judges/john-lee.jpg"
+      name: "Du Xuan",
+      title: "Lawyer",
+      organization: "Harvard & Oxford Alumna",
+      description: "Xuan holds a Master of Laws from Harvard and graduated with First Class Honours from Oxford. A former moot court competitor and Oxford Union debater, she’s guided aspiring speakers in crafting persuasive, high-impact arguments. At NYOC 2025, she brings sharp analytical insight and a belief in speech as a tool for purpose-driven youth advocacy.",
+      image: "/images/judges/du-xuan.jpg"
     },
     {
       name: "Alvin Kuek",
       title: "Lead Coach",
       organization: "Master Speakers",
-      description: "A former ASEAN Scholar at Raffles Institution and Raffles Junior College, and Kuok Foundation University Scholar, Alvin is a seasoned educator with over 20 years of experience. An animated speaker and inspiring mentor, he has trained thousands – including four President's Scholars – to become confident communicators. As Lead Coach at Master Speakers, he continues to shape young voices with insight and heart. At NYOC 2025, he brings deep expertise, proven mentorship, and a heartfelt belief in the power of youth voice.",
+      description: "A former Raffles Institution, Raffles Junior College and University scholar, Alvin is a highly respected public speaking coach with over 20 years of experience. A multiple-time speech contest winner and animated speaker himself, he has trained thousands of students – many of whom became champions and confident communicators. At NYOC 2025, he brings deep expertise, sharp mentorship, and an unwavering belief in youth voice.",
       image: "/images/judges/alvin.jpg"
-    },
-    {
-      name: "Raymond Zhang",
-      title: "Lead Coach",
-      organization: "Master Speakers",
-      description: "Raymond is a core Trinity College London Trainer and Lead Coach at Master Speakers, with over 15 years of coaching experience. A former competitive debater and Orator's Trophy winner, he has adjudicated numerous public speaking contests and trained hundreds of students and adults in effective communication.",
-      image: "/images/judges/raymond-zhang.JPG"
     }
   ];
 
@@ -73,10 +52,10 @@ const OurJudges = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Our Judges
+            Our 2025 Judges
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-          A distinguished judging panel featuring top speakers, seasoned coaches, and accomplished professionals – including Trinity College London's Senior Examiner, Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers’ and Mind Stretcher’s finest.
+          Our 2025 judging panel featured top speakers, seasoned coaches, and accomplished professionals — including Harvard and Oxford alumni, Toastmasters leaders, and Master Speakers' and Mind Stretcher's finest. The 2026 panel will be announced soon.
           </p>
         </motion.div>
         

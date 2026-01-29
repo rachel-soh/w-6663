@@ -17,8 +17,8 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = 'National Youth Orator Championships 2025 - SG60 Edition',
-  description = "A national platform empowering Singapore's youth to become confident communicators. Join the SG60 Edition: My Singapore.",
+  title = 'National Youth Orator Championships 2026',
+  description = "A national platform empowering Singapore's youth to become confident communicators. Coming 2026.",
   type = 'website',
   name = 'National Youth Orator Championships',
   imageUrl = '/images/preview-link-image.png',
@@ -26,7 +26,7 @@ const SEO: React.FC<SEOProps> = ({
   modifiedDate,
   author,
   category,
-  keywords = ['national youth orator championships', 'NYOC 2025', 'SG60 speech competition', 'youth public speaking singapore', 'student speech contest', 'oratorical competition Singapore', 'public speaking for students', 'My Singapore speech'],
+  keywords = ['national youth orator championships', 'NYOC 2026', 'youth public speaking singapore', 'student speech contest', 'oratorical competition Singapore', 'public speaking for students'],
   isBlogPost = false
 }) => {
   const location = useLocation();
@@ -74,11 +74,11 @@ const SEO: React.FC<SEOProps> = ({
     name: 'National Youth Orator Championships',
     url: 'https://www.nyoc.sg',
     logo: 'https://www.nyoc.sg/lovable-uploads/nyoc logo.png',
-    description: 'Singapore\'s premier youth public speaking competition in celebration of SG60.',
+    description: 'Singapore\'s premier youth public speaking competition.',
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      email: 'nyoc@mindstretcher,com'
+      email: 'nyoc@nyoc.sg'
     },
     // sameAs: [
     //   'https://www.linkedin.com/company/wrlds-technologies',
